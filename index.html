@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gn Marcenaria — Móveis Sob Medida | Osasco SP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1E3A5F;
+  --navy-lt:#2C4F7A;
+  --orange:#E8702A;
+  --orange-dk:#C95B1A;
+  --bg:#F5F3EE;
+  --paper:#FFFFFF;
+  --ink:#221F1A;
+  --gray:#6E6A60;
+  --rule:rgba(34,31,26,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Source Sans 3',sans-serif;cursor:none;overflow-x:hidden}
+#cur{position:fixed;width:5px;height:5px;background:var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#ring{position:fixed;width:28px;height:28px;border:1px solid rgba(232,112,42,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 6%;background:var(--navy)}
+.nav-logo{font-family:'Roboto Slab',serif;font-weight:700;font-size:1.25rem;color:var(--bg)}
+.nav-logo span{color:var(--orange)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:600;color:rgba(245,243,238,.8);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{background:var(--orange);color:white;padding:.65rem 1.5rem;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--orange-dk)}
+
+/* HERO practical */
+.hero-gn{max-width:1300px;margin:0 auto;padding:3rem 6% 5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.badge-gn{display:inline-flex;align-items:center;gap:.6rem;background:rgba(232,112,42,.1);color:var(--orange-dk);padding:.5rem 1.2rem;font-size:.78rem;font-weight:700;margin-bottom:1.4rem}
+h1{font-family:'Roboto Slab',serif;font-weight:700;font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.2;color:var(--navy);margin-bottom:1.4rem}
+.hero-desc-gn{font-size:.92rem;color:var(--gray);line-height:1.85;max-width:420px;margin-bottom:2.2rem}
+.btn-orange{background:var(--orange);color:white;padding:.95rem 1.9rem;font-size:.85rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;transition:background .2s}
+.btn-orange:hover{background:var(--orange-dk)}
+.hero-gn-img{height:420px;overflow:hidden;border:6px solid var(--navy)}
+.hero-gn-img img{width:100%;height:100%;object-fit:cover}
+
+/* SERVICE checklist */
+.services-gn{max-width:900px;margin:0 auto;padding:5rem 6%}
+.services-gn-head{text-align:center;margin-bottom:3.5rem}
+.label-gn{font-family:'Roboto Slab',serif;font-weight:700;font-size:.78rem;color:var(--orange-dk);margin-bottom:.7rem}
+h2{font-family:'Roboto Slab',serif;font-weight:700;font-size:clamp(1.9rem,3.5vw,2.6rem);color:var(--navy)}
+.check-list{display:flex;flex-direction:column;gap:0}
+.check-item{display:flex;align-items:center;gap:1.2rem;padding:1.3rem 0;border-bottom:1px solid var(--rule)}
+.check-item:first-child{border-top:1px solid var(--rule)}
+.check-mark{width:32px;height:32px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.check-mark svg{width:16px;height:16px;color:white}
+.check-item span{font-weight:600;font-size:.95rem}
+
+/* WHY US trust bullets */
+.why-gn{background:var(--navy);padding:5rem 6%}
+.why-gn-head{text-align:center;margin-bottom:3.5rem}
+.why-gn-head .label-gn{color:var(--orange)}
+.why-gn-head h2{color:var(--bg)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1000px;margin:0 auto;text-align:center}
+.why-item h3{font-family:'Roboto Slab',serif;font-size:1.6rem;color:var(--orange);margin-bottom:.6rem}
+.why-item p{font-size:.82rem;color:rgba(245,243,238,.6);line-height:1.7}
+
+/* GALLERY simple grid */
+.gallery-gn{max-width:1300px;margin:0 auto;padding:6rem 6%}
+.gallery-grid-gn{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.gallery-item-gn{height:200px;overflow:hidden;border:3px solid var(--navy)}
+.gallery-item-gn img{width:100%;height:100%;object-fit:cover}
+
+/* CTA */
+.cta-gn{padding:6rem 6%;text-align:center}
+.cta-gn p{color:var(--gray);max-width:420px;margin:1rem auto 2.2rem;font-size:.9rem;line-height:1.85}
+
+footer{background:var(--ink);padding:2.5rem 6%;display:flex;align-items:center;justify-content:space-between}
+.foot-logo-gn{font-family:'Roboto Slab',serif;font-weight:700;font-size:1.1rem;color:var(--bg)}
+.foot-txt-gn{font-size:.65rem;color:rgba(245,243,238,.35)}
+
+.wpp{position:fixed;bottom:2rem;right:2rem;z-index:50;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;animation:wap 2.2s ease-in-out infinite}
+.wpp svg{width:25px;height:25px;fill:white}
+@keyframes wap{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.3)}50%{box-shadow:0 4px 32px rgba(37,211,102,.6)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none}}
+
+@media(max-width:900px){
+  nav .nav-links{display:none}
+  .hero-gn{grid-template-columns:1fr}
+  .hero-gn-img{height:280px}
+  .why-grid{grid-template-columns:1fr}
+  .gallery-grid-gn{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;gap:1rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="ring"></div>
+
+<nav>
+  <div class="nav-logo">Gn<span>Marcenaria</span></div>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5511960949193" class="nav-cta">Solicitar Orçamento</a>
+</nav>
+
+<section class="hero-gn">
+  <div>
+    <div class="badge-gn reveal">Família · Tradição · Confiança</div>
+    <h1 class="reveal d1">Móveis sob medida feitos com seriedade</h1>
+    <p class="hero-desc-gn reveal d2">Trabalho de marcenaria de verdade, sem enrolação — qualidade, prazo certo e preço justo para sua casa ou empresa.</p>
+    <a href="https://wa.me/5511960949193" class="btn-orange reveal">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Solicitar Orçamento
+    </a>
+  </div>
+  <div class="hero-gn-img reveal d2">
+    <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=700&q=80&fit=crop&auto=format" alt="Gn Marcenaria">
+  </div>
+</section>
+
+<section class="services-gn" id="servicos">
+  <div class="services-gn-head reveal">
+    <div class="label-gn">O que fazemos</div>
+    <h2>Nossos serviços</h2>
+  </div>
+  <div class="check-list reveal d1">
+    <div class="check-item"><div class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></div><span>Cozinhas planejadas</span></div>
+    <div class="check-item"><div class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></div><span>Closets e guarda-roupas</span></div>
+    <div class="check-item"><div class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></div><span>Móveis para escritório</span></div>
+    <div class="check-item"><div class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></div><span>Estantes e nichos sob medida</span></div>
+    <div class="check-item"><div class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></div><span>Reformas e manutenção de móveis</span></div>
+  </div>
+</section>
+
+<section class="why-gn">
+  <div class="why-gn-head reveal">
+    <div class="label-gn">Por que a gente</div>
+    <h2>Compromisso de verdade</h2>
+  </div>
+  <div class="why-grid reveal d1">
+    <div class="why-item">
+      <h3>12+</h3>
+      <p>Anos de experiência em marcenaria sob medida.</p>
+    </div>
+    <div class="why-item">
+      <h3>100%</h3>
+      <p>Garantia em todos os projetos entregues.</p>
+    </div>
+    <div class="why-item">
+      <h3>Sem</h3>
+      <p>Surpresas no prazo ou no orçamento combinado.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-gn" id="galeria">
+  <div class="services-gn-head reveal">
+    <div class="label-gn">Nosso trabalho</div>
+    <h2>Projetos entregues</h2>
+  </div>
+  <div class="gallery-grid-gn reveal d1">
+    <div class="gallery-item-gn"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&q=80&fit=crop&auto=format" alt="Cozinha"></div>
+    <div class="gallery-item-gn"><img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=300&q=80&fit=crop&auto=format" alt="Closet"></div>
+    <div class="gallery-item-gn"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=300&q=80&fit=crop&auto=format" alt="Escritório"></div>
+    <div class="gallery-item-gn"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=300&q=80&fit=crop&auto=format" alt="Estante"></div>
+  </div>
+</section>
+
+<section class="cta-gn reveal" id="contato">
+  <div class="label-gn">Vamos conversar?</div>
+  <h2 style="font-family:'Roboto Slab',serif;font-weight:700;color:var(--navy);font-size:clamp(1.9rem,3.5vw,2.6rem)">Solicite seu orçamento sem compromisso</h2>
+  <p>Conte sobre seu projeto e receba uma proposta justa e detalhada.</p>
+  <a href="https://wa.me/5511960949193" class="btn-orange">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Solicitar pelo WhatsApp
+  </a>
+</section>
+
+<footer>
+  <div class="foot-logo-gn">Gn Marcenaria</div>
+  <div class="foot-txt-gn">© 2025 · Osasco SP</div>
+</footer>
+
+<a href="https://wa.me/5511960949193" class="wpp" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function lerp(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerp)})();
+const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
